@@ -117,10 +117,10 @@ const IsInARTCC = (client) => {
 
 const writeClientModelListToPersist = (client_list) => {
 
-    const password = process.env.MONGODB_ATLAS_PWD;
+    const Mongocon = process.env.MONGOCON;
 
     //this example uses ES6 template literals for string interpolation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-    const uri = `mongodb+srv://cidm4382:${password}@cidm4382-m35ko.mongodb.net/vatsim?retryWrites=true&w=majority`;
+    const uri = Mongocon;
     mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
     const Client = mongoose.model('Client', clientSchema);    
